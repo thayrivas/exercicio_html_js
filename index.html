@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>EBAC Form</h1>
+        <h2>Preencha os campos abaixo:</h2>
+        <form id = "formulario">
+            <input type="number" id ="campo-a" required placeholder="Digite um número" />
+            <input type="number" id ="campo-b" required placeholder="Digite outro número" />
+            <button type="submit" id ="btn-confirmar">Confirmar</button>
+        </form>
+        <div class="success-message">
+            <p></p>
+        </div>
+        <div class="error-message">
+            <p>Tente novamente. O número do campo B precisa ser maior que o número do campo A!</p>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
