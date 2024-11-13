@@ -1,21 +1,35 @@
-const form = document.getElementById("formulario")
-const btnConfirmar = document.getElementById("btn-confirmar");
-const msgSuccess = document.querySelector("success-message");
-const msgError = document.querySelector("error-message");
+const form = document.getElementById("form");
 
-form.addEventListener('submit', validaCampo); {
+function validacao(a, b){
+    return parseInt(a) > parseInt(b)
+};
+
+form.addEventListener ("submit", function(e){
     e.preventDefault();
-}
 
-function validaCampo (e) {
-    const campoA = document.getElementById('campo-a');
-    const campoB = document.getElementById('campo-b');
-    const A = Number(campoA.value);
-    const B = Number(campoB.value);
+    const campoA = document.getElementById("campo-a");
+    const campoB = document.getElementById("campo-b");
+    const mensagemSucesso = "Formulário enviado com sucesso!"
+    const mensagemErro = "O valor do campo B precisa ser maior que o valor do campo A!"
 
-    if (A > B) {
-        document.querySelector('.error-message').style.display = "block";
+    if (validacao (campoB.value, campoA.value) === true){
+        const containerSucessMessage = document.querySelector(".mensagemDeSucesso");
+        containerSucessMessage.innerHTML = mensagemSucesso;
+        containerSucessMessage.style.display = "block";
+        campoA.value = ""
+        campoB.value = ""
+        const containerErrorMessage = document.querySelector(".mensagemDeErro");
+        containerErrorMessage.innerHTML = mensagemErro;
+        containerErrorMessage.style.display = "none";
+        campoA.style.border = "";
+
     } else {
-        document.querySelector('.sucess-message').style.display = "block";
+        const containerErrorMessage = document.querySelector(".mensagemDeErro");
+        containerErrorMessage.innerHTML = mensagemErro;
+        containerErrorMessage.style.display = "block";
+        campoA.style.border = "3px solid red";
+
     }
-}
+})
+
+console.log(form);

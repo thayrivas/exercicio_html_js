@@ -11,17 +11,13 @@
     <div class="container">
         <h1>EBAC Form</h1>
         <h2>Preencha os campos abaixo:</h2>
-        <form id = "formulario">
+        <form id="form">
             <input type="number" id ="campo-a" required placeholder="Digite um número" />
+            <p class="mensagemDeErro"></p>
             <input type="number" id ="campo-b" required placeholder="Digite outro número" />
             <button type="submit" id ="btn-confirmar">Confirmar</button>
         </form>
-        <div class="success-message">
-            <p></p>
-        </div>
-        <div class="error-message">
-            <p>Tente novamente. O número do campo B precisa ser maior que o número do campo A!</p>
-        </div>
+        <p class="mensagemDeSucesso"></p>
     </div>
     <script src="./main.js"></script>
 </body>
